@@ -1,4 +1,3 @@
-<?php
 
 $request = new HttpRequest();
 $request->setUrl('https://onesignal.com/api/v1/notifications');
