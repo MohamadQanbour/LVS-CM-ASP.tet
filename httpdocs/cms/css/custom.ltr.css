@@ -1,0 +1,26 @@
+﻿.icheck > div + label { margin-left: 5px; }
+.form-group .err { right: 2px; }
+.egv-savecancel.sticky { left: 0px; }
+.egv-savecancel a:first-child { margin-left: 0px; }
+.egv-input-form .err.in { right: 20px; }
+.egv-toolbar .btn-group:first-child { margin-left: 0px; }
+.egv-toolbar .btn-group:last-child { margin-right: 0px; }
+.egv-toolbar-btn .fa { margin-right: 4px; }
+.egv-col-select label { margin-left: 5px; }
+.egv-check { margin-left: 50px; }
+.sortable-header .egv-sort-tools { right: -10px; }
+.sortable-header:hover .egv-sort-tools { right: 10px; }
+.egv-sort-indicator { margin-right: 5px; }
+.egv-grid-inline-image { margin-right: 10px; }
+.egv-grid-tools { padding-right: 1px; }
+.egv-grid-box-body .egv-toolbar { padding-left: 6px; }
+#pnlAppliedFilters a .fa { margin-left: 5px; }
+.max-value-error { float: right; }
+.btn.btn-file > i { margin-right: 5px; }
+[data-singlefileuploader] .btn { margin-right: 5px; }
+.rbl td label { margin-left: 10px; }
+.sidebar-scroller { right: 0px; padding: 0px 5px 0px 0px; }
+.translation-type-items{ padding-left: 0px; }
+.translations-list { border-right: 1px solid #ccc; }
+.alert.alert-success { float: right; }
+.valign-top { vertical-align: top !important; }

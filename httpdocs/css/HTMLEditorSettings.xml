@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<Settings>
+    <FrontPageCSS>html-editor-styles</FrontPageCSS>
+    <RTLFrontPageCss>html-editor-styles.rtl</RTLFrontPageCss>
+    <CustomColors>
+        <Color>
+            <Code>#e3001b</Code>
+        </Color>
+        <Color>
+            <Code>#1f419b</Code>
+        </Color>
+    </CustomColors>
+</Settings>

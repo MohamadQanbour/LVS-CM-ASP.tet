@@ -1,0 +1,25 @@
+﻿.egv-assets-toolbar .sep { border-left: 1px inset #979797; }
+.egv-assets-search-panel a { float: right; }
+.egv-assets-search-panel a:last-child {
+    border-radius: 10px 0px 0px 10px;
+    -webkit-border-radius: 10px 0px 0px 10px;
+    -moz-border-radius: 10px 0px 0px 10px;
+    -ms-border-radius: 10px 0px 0px 10px;
+    -o-border-radius: 10px 0px 0px 10px;
+}
+.egv-assets-search-panel input { 
+	float: right;
+	border-radius: 0px 10px 10px 0px;
+    -webkit-border-radius: 0px 10px 10px 0px;
+    -moz-border-radius: 0px 10px 10px 0px;
+    -ms-border-radius: 0px 10px 10px 0px;
+    -o-border-radius: 0px 10px 10px 0px;
+}
+.egv-assets-files-list table th a span { margin-right: 10px; }
+.egv-assets-pager { right: 0px; }
+.egv-assets-files-list .fa { margin-left: 5px; float: right; }
+.egv-assets-loading-effect img { right: 50%; }
+.egv-assets-content-info { left: 0px; }
+.egv-assets-preview { left: 0px; }
+.egv-assets-preview img { right: 50%; }
+.egv-assets-preview [egvcommand] { left: 14px; }

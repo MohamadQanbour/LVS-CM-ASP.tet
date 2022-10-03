@@ -1,0 +1,27 @@
+﻿body { font-family: 'Droid Arabic Naskh', 'Source Sans Pro', 'Helvetica Neue', Helvetica,Arial,sans-serif; }
+.icheck > div + label { margin-right: 5px; }
+.form-group .err { left: 2px; }
+.egv-savecancel.sticky { right: 0px; }
+.egv-savecancel a:first-child { margin-right: 0px; }
+.egv-input-form .err.in { left: 20px; }
+.egv-toolbar .btn-group:first-child { margin-right: 0px; }
+.egv-toolbar .btn-group:last-child { margin-left: 0px; }
+.egv-toolbar-btn .fa { margin-left: 4px; }
+.egv-col-select label { margin-right: 5px; }
+.egv-check { margin-right: 50px; }
+.sortable-header .egv-sort-tools { left: -10px; }
+.sortable-header:hover .egv-sort-tools { left: 10px; }
+.egv-sort-indicator { margin-left: 5px; }
+.egv-grid-inline-image { margin-left: 10px; }
+.egv-grid-tools { padding-left: 1px; }
+.egv-grid-box-body .egv-toolbar { padding-right: 6px; }
+#pnlAppliedFilters a .fa { margin-right: 5px; }
+.max-value-error { float: left; }
+.btn.btn-file > i { margin-left: 5px; }
+[data-singlefileuploader] .btn { margin-left: 5px; }
+.rbl td label { margin-right: 10px; }
+.sidebar-scroller { left: 0px; padding: 0px 0px 0px 5px; }
+.translation-type-items{ padding-right: 0px; }
+.translations-list { border-left: 1px solid #ccc; }
+.alert.alert-success { float: left; }
+.valign-top { vertical-align: top !important; }

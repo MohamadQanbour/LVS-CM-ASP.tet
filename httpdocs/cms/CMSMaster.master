@@ -1,0 +1,195 @@
+﻿<%@ Master Language="VB" CodeFile="CMSMaster.master.vb" Inherits="cms_CMSMaster" %>
+<%@ Import Namespace="EGV.Utils" %>
+<%@ Import Namespace="EGV.Enums" %>
+
+<!DOCTYPE html>
+
+<html id="html" runat="server">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport" />
+    <title><asp:Literal ID="litTitle" runat="server" /></title>
+    <asp:Literal ID="litBeforeStyle" runat="server" />
+    <asp:Literal ID="litAddStyle" runat="server" />
+    <asp:Literal ID="litAfterStyle" runat="server" />
+    <asp:ContentPlaceHolder ID="header" runat="server"></asp:ContentPlaceHolder>
+    <asp:Literal ID="litAddHeaderScript" runat="server" />
+    <asp:Literal ID="litAddHeaderInlineScript" runat="server" />
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body class="hold-transition skin-blue-light sidebar-mini fixed">
+    <form id="form1" runat="server">
+        <div class="wrapper">
+            <header class="main-header">
+                <a href='<%=EGV.Utils.Path.MapCMSFile("default.aspx") %>' class="logo">
+                    <span class="logo-mini"><asp:Literal ID="litLogoMini" runat="server" /></span>
+                    <span class="logo-lg"><asp:Literal ID="litLogo" runat="server" /></span>
+                </a>
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+                        <span class="sr-only">Toggle navigation</span>
+                    </a>
+                    <div class="navbar-custom-menu">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown" id="liLanguages" runat="server" visible="false">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-globe"></i>&nbsp;<%=Helper.Language.Title %></a>
+                                <ul class="dropdown-menu">
+                                    <asp:Repeater ID="rptLanguages" runat="server">
+                                        <ItemTemplate>
+                                            <li>
+                                                <egvc:EGVLinkButton ID="lnkChangeLanguage" runat="server" CommandArgument='<%#Eval("Id") %>' OnClick="lnkChangeLanguage_Click">
+                                                    <img src='<%#Eval("ImageURL")%>' height="16" />&nbsp;<%#Eval("Title") %>
+                                                </egvc:EGVLinkButton>
+                                            </li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </ul>
+                            </li>
+                            <li class="dropdown messages-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <i class="fa fa-envelope-o"></i>
+                                    <span class="label label-success"><asp:Literal ID="litNewMessagesCount" runat="server" /></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="header"><%=Localization.GetResource("Resources.Global.Master.YouHave") %> <asp:Literal ID="litNewMessagesCount2" runat="server" /> <%=Localization.GetResource("Resources.Global.Master.Messages") %></li>
+                                    <li>
+                                    <ul class="menu">
+                                        <asp:Repeater ID="rptMessages" runat="server">
+                                            <ItemTemplate>
+                                                <li>
+                                                    <a href='<%#Path.MapCMSFile("messages/read.aspx?id=" & Eval("Id").ToString()) %>'>
+                                                        <div class="pull-left">
+                                                            <img src='<%#GetSenderImage(MyConn, Eval("SenderUserId"), Eval("SenderUserType")) %>' class="img-circle" />
+                                                        </div>
+                                                        <h4>
+                                                            <%#GetSenderName(MyConn, Eval("SenderUserId"), Eval("SenderUserType")) %>
+                                                            <small><i class="fa fa-clock-o"></i> <%#Helper.FormateDateDifference(CDate(Eval("MessageDate"))) %></small>
+                                                        </h4>
+                                                        <p><%#Eval("Title") %></p>
+                                                    </a>
+                                                </li>
+                                            </ItemTemplate>
+                                        </asp:Repeater>
+                                    </ul>
+                                    </li>
+                                    <li class="footer"><a href='<%=Path.MapCMSFile("messages/list.aspx") %>'><%=Localization.GetResource("Resources.Global.Master.SeeAllMessages") %></a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown user user-menu">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <asp:Image ID="imgBtn" runat="server" CssClass="user-image" />
+                                    <span class="hidden-xs"><asp:Literal ID="litUserName" runat="server" /></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="user-header">
+                                        <asp:Image ID="imgProfile" runat="server" CssClass="img-circle" />
+                                        <p><asp:Literal ID="litUserName2" runat="server" /></p>
+                                    </li>
+                                    <li class="user-footer">
+                                        <div class="pull-left">
+                                            <egvc:EGVHyperLink ID="hypProfile" runat="server" FlatButton="true" Color="Default" Text="Resources.Global.CMS.Profile" />
+                                        </div>
+                                        <div class="pull-right">
+                                            <egvc:EGVButton ID="btnSignout" runat="server" FlatButton="true" Text="Resources.Global.CMS.btnSignoutText" />
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+            <aside class="main-sidebar">
+                <section class="sidebar">
+                    <div class="sidebar-scroller">
+                        <a href="#"><i class="fa fa-chevron-circle-up"></i></a>
+                        <a href="#"><i class="fa fa-chevron-circle-down"></i></a>
+                    </div>
+                    <div class="user-panel">
+                        <div class="pull-left image">
+                            <asp:Image ID="imgSide" runat="server" CssClass="img-circle" />
+                        </div>
+                        <div class="pull-left info">
+                            <p><asp:Literal ID="litUserName3" runat="server" /></p>
+                        </div>
+                    </div>
+                    <ul class="sidebar-menu">
+                        <li class="header"><%=Resources.CMS.CMSNavigation %></li>
+                        <asp:Repeater ID="rptMenu" runat="server">
+                            <ItemTemplate>
+                                <li class='<%#IIf(ParentPageId > 0 AndAlso ParentPageId = Eval("Id"), "active", "") %>'>
+                                    <a href='<%#EGV.Utils.Path.MapCMSFile(Eval("PagePath")) %>'><i class='<%#Eval("IconClass") %>'></i> <span><%#Localization.GetResource("Resources.Global.Menu.M" & Eval("Id") & "Title") %></span> <i class="fa fa-angle-left pull-right" runat="server" visible='<%#IIf(EGV.Business.CMSMenuController.HasChildren(Eval("Id"), MyConn), True, False) %>'></i></a>
+                                    <asp:Repeater ID="rptSub" runat="server" Visible="false">
+                                        <HeaderTemplate><ul class="treeview-menu"></HeaderTemplate>
+                                        <FooterTemplate></ul></FooterTemplate>
+                                        <ItemTemplate>
+                                            <li class='<%#IIf(PageId = Eval("Id"), "active", "") %>'>
+                                                <a href='<%#EGV.Utils.Path.MapCMSFile(Eval("PagePath")) %>'>
+                                                    <i class='<%#Eval("IconClass") %>'></i> <%#Localization.GetResource("Resources.Global.Menu.M" & Eval("Id") & "Title")%>
+                                                </a>
+                                            </li>
+                                        </ItemTemplate>
+                                    </asp:Repeater>
+                                </li>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                        <li>
+                            <a href='<%=Path.MapCMSFile("messages/list.aspx") %>'>
+                                <i class="fa fa-envelope"></i> <span><%=Localization.GetResource("Resources.Global.CMS.Mailbox") %></span>
+                                <i class="fa fa-angle-left pull-right"></i>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href='<%=Path.MapCMSFile("messages/list.aspx") %>'><%=Localization.GetResource("Resources.Global.CMS.Inbox") %> <span class="label label-primary pull-right"><asp:Literal ID="litUnreadMessages" runat="server" /></span></a></li>
+                                <li runat="server" visible="false"><a href='<%=Path.MapCMSFile("messages/list.aspx?type=" & MessageFilterTypes.Starred) %>'><%=Localization.GetResource("Resources.Global.CMS.Starred") %> <span class="label label-warning pull-right"><asp:Literal ID="litStarredMessages" runat="server" /></span></a></li>
+                                <li><a href='<%=Path.MapCMSFile("messages/list.aspx?type=" & MessageFilterTypes.Sent) %>'><%=Localization.GetResource("Resources.Global.CMS.Sent") %></a></li>
+                                <li><a href='<%=Path.MapCMSFile("messages/compose.aspx") %>'><%=Localization.GetResource("Resources.Global.CMS.Compose") %></a></li>
+                                <li id="liViewAll" runat="server" visible="false"><a href='<%=Path.MapCMSFile("messages/ViewAll.aspx") %>'><%=Localization.GetResource("Resources.Global.CMS.ViewAll") %></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </section>
+            </aside>
+            <div class="content-wrapper">
+                <section class="content-header">
+                    <h1>
+                        <asp:Literal ID="litPageHeaderTitle" runat="server" />
+                        <small><asp:Literal ID="litPageHeaderDescription" runat="server" /></small>
+                    </h1>
+                    <ol class="breadcrumb">
+                        <li><a href='<%=EGV.Utils.Path.MapCMSFile("default.aspx") %>'><i class="fa fa-dashboard"></i> Dashboard</a></li>
+                        <asp:Repeater ID="rptBC" runat="server">
+                            <ItemTemplate>
+                                <li><a href='<%#Eval("URL") %>'><i class='<%#Eval("IconClass") %>'></i><%#Eval("Title") %></a></li>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                        <li class="active"><asp:Literal ID="litBCCurrent" runat="server" /></li>
+                    </ol>
+                </section>
+                <section class="content">
+                    <egvc:Notifier ID="egvNotifier" runat="server" />
+                    <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                </section>
+            </div>
+            <footer class="main-footer">
+                <div class="pull-right hidden-xs">
+                    CMS Version <b>V<asp:Literal ID="litCMSVersion" runat="server" /></b>
+                </div>
+                <strong>Copyrights &copy; <%=Now.Year %> <a href="http://www.littlevillageschool.com/" target="_blank">Little Village School</a></strong> All Rights Reserved.
+            </footer>
+        </div>
+        <script type="text/javascript" src='<%=EGV.Utils.Path.MapCMSScript("jQuery-2.2.0.min") %>'></script>
+        <script type="text/javascript" src='<%=EGV.Utils.Path.MapCMSScript("bootstrap.min") %>'></script>
+        <script type="text/javascript" src='<%=EGV.Utils.Path.MapCMSScript("jquery.slimscroll.min") %>'></script>
+        <script type="text/javascript" src='<%=EGV.Utils.Path.MapCMSScript("fastclick.min") %>'></script>
+        <script type="text/javascript" src='<%=EGV.Utils.Path.MapCMSScript("app.min") %>'></script>
+        <script type="text/javascript" src='<%=EGV.Utils.Path.MapCMSScript("icheck.min") %>'></script>
+        <script type="text/javascript" src='<%=EGV.Utils.Path.MapCMSScript("lib/Master.2010.1") %>'></script>
+        <asp:Literal ID="litAddScript" runat="server" />
+        <asp:Literal ID="litAddInlineScript" runat="server" />
+    </form>
+</body>
+</html>

@@ -1,0 +1,210 @@
+﻿.form-group { position: relative; }
+.form-group .err {
+    position: absolute;
+    top: 0px;
+    font-size: 10px;
+    color: red;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+.form-group .err.in {
+    visibility: visible;
+    opacity: 1;
+    top: -13px;
+}
+.egvGrid td { vertical-align: middle !important; }
+.egvGrid td.valign-top { vertical-align: top !important; }
+.egvGrid tr:nth-child(even) { background-color: #fafafa; }
+.egvGrid tr.selected { background-color: rgba(156,194,203,0.2); }
+.egvGrid tr.selected:hover { background-color: rgba(156,194,203,0.4); }
+.egv-savecancel.sticky {
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    background-color: #fff;
+    border-top: 2px solid #ccc;
+    box-shadow: 0px 10px 50px #000;
+    padding: 10px;
+    z-index: 1000;
+}
+.egv-savecancel a { margin: 0px 3px; }
+.egv-toolbar .btn-group { margin: 0px 5px; }
+.egv-grid-box-body { min-height: 300px; }
+.egv-col-select li { padding: 0px 5px; }
+.pager-info { line-height: 30px; }
+.sortable-header { position: relative; }
+.sortable-header .egv-sort-tools {
+    position: absolute;
+    top: 10px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+}
+.sortable-header:hover .egv-sort-tools {
+    visibility: visible;
+    opacity: 1;
+}
+.egv-sort-indicator { font-size: 10px; }
+.icheck label { font-weight: normal; }
+.control-label { font-weight: bold; }
+.egv-grid-empty-data {
+    font-size: 18px;
+    padding: 20px 40px;
+    border: 1px solid #3c8dbc;
+    border-radius: 5px;
+}
+.tab-footer {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+    border-top: 1px solid #f4f4f4;
+    padding: 10px;
+    background-color: #fff;
+}
+.box-none {
+    border-top-color: transparent;
+    box-shadow: none;
+}
+.egv-grid-inline-image {
+    max-width: 50px !important;
+    min-width: 20px;
+    max-height: 50px !important;
+    min-height: 20px;
+}
+.egv-filter {
+    border-top: 1px solid #f4f4f4;
+    border-bottom: 1px solid #f4f4f4;
+    padding: 15px;
+    clear: both;
+    display: none;
+}
+.egv-filter .form-group { width: 30%; }
+.egv-filter .egv-filter-button-container { width: 10%; }
+.egv-filter .form-group .form-control { width: 100%; }
+#pnlAppliedFilters { padding-top: 10px; }
+#pnlAppliedFilters a { margin: 0px 5px 5px; }
+.egv-image-editor { padding: 20px 0px; }
+.egv-image-editor .egv-viewer {
+    padding: 20px 0px;
+    margin: 20px 0px;
+}
+.egv-image-editor .egv-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    width: 100%;
+}
+.egv-image-editor .egv-image-wrapper img {
+    position: absolute;
+    cursor: pointer;
+}
+.access-denied { font-size: 40px; }
+.egv-audit-info {
+    padding: 20px 0px 10px;
+    font-size: 12px;
+    margin-top: 20px;
+    border-top: 1px solid #ccc;
+}
+.no-message { padding: 10px 40px; }
+.mailbox-read-message { min-height: 200px; }
+.highlight-error { border-color: red; }
+.max-value-error {
+    color: red;
+    display: none;
+}
+.rbl { width: 100%; }
+.rbl td { padding: 10px; }
+.sidebar-scroller {
+    position: absolute;
+    height: 100%;
+    width: 16px;
+}
+.sidebar-scroller a {
+    position: absolute;
+    top: 65px;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    color: #fff;
+    transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -o-transition: all 0.4s;
+}
+.sidebar-scroller a:last-child {
+    top: unset;
+    bottom: 0px;
+}
+.sidebar-scroller.in a { opacity: 1; visibility: visible; color: #ccc; }
+.translation-type { padding: 10px 2px; }
+.unpad5 { padding-left: 5px; padding-right: 5px; }
+.translation-type-title { padding: 5px; margin-bottom: 10px; }
+.translation-type-items { list-style-type: none; }
+.translation-type-items a {
+    display: block;
+    padding: 5px 10px;
+    color: #000;
+}
+.translation-type-items a:hover, .translation-type-items a.active {
+    background-color: #00a65a;
+    color: #fff;
+}
+.table-title { font-size: 18px; }
+.table-title .fa {
+    font-size: 12px;
+    margin: 0px 10px;
+}
+[data-type="translation"] {
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+.translate-audit { font-size: 10px; }
+input.error, select.error { border-color: red; }
+.text-small {
+    font-size: 10px;
+    margin-bottom: 0px;
+}
+.box .nav-stacked>li { width: 100%; }
+.alert.alert-success {
+    position: relative;
+    z-index: 1000;
+    top: -15px;
+}
+[unselectable="on"] { max-width: 100%; }
+/*Coloring*/
+/*Main Color*/
+.bg-navy, .btn-primary, .btn-warning, .bg-olive, .bg-purple,
+.bg-maroon, .btn-success, .bg-orange, .btn-info
+{ background-color: #330D6C !important; }
+.box.box-primary, .nav-tabs-custom > .nav-tabs > li.active,
+.box.box-success
+{ border-color: #330D6C !important; }
+/*Degree 1*/
+.btn-primary, .btn-warning, .btn-success, .btn-info
+{ border-color: #290a57 !important; }
+.btn-primary:hover, .btn-primary:active, .btn-primary.hover,
+.btn-warning:hover, .btn-warning:active, .btn-warning.hover,
+.skin-blue-light .main-header .navbar .sidebar-toggle:hover,
+.skin-blue-light .main-header .logo:hover,
+.btn-success:hover, .btn-success:active, .btn-success.hover,
+.btn-info:hover, .btn-info:active, .btn-info.hover
+{ background-color: #290a57 !important; }
+/*Degree 2*/
+.btn-primary:hover, .btn-primary:active, .btn-primary.hover,
+.btn-warning:hover, .btn-warning:active, .btn-warning.hover,
+.btn-success:hover, .btn-success:hover, .btn-success.hover,
+.btn-info:hover, .btn-info:active, .btn-info.hover
+{ border-color: #1d0436 !important; }
+/*White*/
+.btn-info:hover, .btn-info:active, .btn-info.hover
+{ color: #fff; }

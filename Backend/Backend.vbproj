@@ -1,0 +1,266 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{640F88D0-2B99-46A1-8CD9-192E6E009E01}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>Backend</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Backend.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Backend.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ApplicationBlocks.Data">
+      <HintPath>..\httpdocs\Bin\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MSCaptcha">
+      <HintPath>..\httpdocs\Bin\MSCaptcha.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="TemplateParser">
+      <HintPath>..\httpdocs\Bin\TemplateParser.dll</HintPath>
+    </Reference>
+    <Reference Include="WYSIWYGEditor">
+      <HintPath>..\httpdocs\Bin\WYSIWYGEditor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base\AjaxBaseClass.vb" />
+    <Compile Include="Base\APIRequestBase.vb" />
+    <Compile Include="Base\BusinessBase.vb" />
+    <Compile Include="Base\BusinessHelper.vb" />
+    <Compile Include="Business\Lookup\MemberContacts.vb" />
+    <Compile Include="Business\Membership\DeviceToken.vb" />
+    <Compile Include="Business\Membership\StudentAccount.vb" />
+    <Compile Include="Business\Membership\StudentAccount2.vb" />
+    <Compile Include="Business\Membership\StudentNote.vb" />
+    <Compile Include="Business\Membership\StudentPayment.vb" />
+    <Compile Include="Business\Modules\Class.vb" />
+    <Compile Include="Business\Modules\ClassAdmins.vb" />
+    <Compile Include="Business\Modules\ExamTemplate.vb" />
+    <Compile Include="Business\Modules\ExamTemplateItem.vb" />
+    <Compile Include="Business\Modules\MaterialExamTemplateItem.vb" />
+    <Compile Include="Business\Modules\Note.vb" />
+    <Compile Include="Business\Modules\Section.vb" />
+    <Compile Include="Business\Modules\SectionMaterialUser.vb" />
+    <Compile Include="Business\Modules\StudentExam.vb" />
+    <Compile Include="Business\Modules\StudentPresent.vb" />
+    <Compile Include="Business\System\UserTypeRole.vb" />
+    <Compile Include="Controls\Form Controls\SingleFileUploader.vb" />
+    <Compile Include="Core\Constants.vb" />
+    <Compile Include="Interface\ILocBusinessClass.vb" />
+    <Compile Include="services\App\Attendance.vb" />
+    <Compile Include="services\App\Messaging.vb" />
+    <Compile Include="services\App\Misc.vb" />
+    <Compile Include="services\App\Portal.vb" />
+    <Compile Include="services\App\Scores.vb" />
+    <Compile Include="services\App\Testing.vb" />
+    <Compile Include="services\CMS\CMSMisc.vb" />
+    <Compile Include="services\CMS\Import.vb" />
+    <Compile Include="services\CMS\Translation.vb" />
+    <Compile Include="services\Requests\NotificationRequest.vb" />
+    <Compile Include="Utils\DownloadHandler.vb" />
+    <Compile Include="Base\EntityStructure.vb" />
+    <Compile Include="Business\Communication\Message.vb" />
+    <Compile Include="Business\Communication\MessageAttachment.vb" />
+    <Compile Include="Business\Communication\MessageUser.vb" />
+    <Compile Include="Business\Lookup\Area.vb" />
+    <Compile Include="Business\Lookup\Language.vb" />
+    <Compile Include="Business\Membership\Family.vb" />
+    <Compile Include="Business\Membership\Student.vb" />
+    <Compile Include="Business\Modules\Material.vb" />
+    <Compile Include="Business\Modules\Season.vb" />
+    <Compile Include="Business\System\CMSMenu.vb" />
+    <Compile Include="Business\System\EGVList.vb" />
+    <Compile Include="Business\System\Email.vb" />
+    <Compile Include="Business\System\EmailKey.vb" />
+    <Compile Include="Business\System\Exception.vb" />
+    <Compile Include="Business\System\Permission.vb" />
+    <Compile Include="Business\System\Role.vb" />
+    <Compile Include="Business\System\RolePermission.vb" />
+    <Compile Include="Business\System\Setting.vb" />
+    <Compile Include="Business\System\User.vb" />
+    <Compile Include="Business\System\UserGrid.vb" />
+    <Compile Include="Business\System\UserProfile.vb" />
+    <Compile Include="Controls\EGV Controls\AssetsManager.vb" />
+    <Compile Include="Controls\EGV Controls\FileUploader.vb" />
+    <Compile Include="Controls\EGV Controls\ImageEditor.vb" />
+    <Compile Include="Controls\EGV Controls\MapMarkerSpecifier.vb" />
+    <Compile Include="Controls\Form Controls\AuditInfo.vb" />
+    <Compile Include="Controls\Form Controls\HTMLEditor.vb" />
+    <Compile Include="Controls\Layout Controls\Box.vb" />
+    <Compile Include="Controls\Form Controls\Button.vb" />
+    <Compile Include="Controls\Form Controls\Checkbox.vb" />
+    <Compile Include="Controls\Layout Controls\ListView.vb" />
+    <Compile Include="Controls\Layout Controls\Modal.vb" />
+    <Compile Include="Controls\Validation Controls\CompareValidator.vb" />
+    <Compile Include="Controls\Validation Controls\ControlCompareValidator.vb" />
+    <Compile Include="Controls\Validation Controls\CustomValidator.vb" />
+    <Compile Include="Controls\Form Controls\DropDownList.vb" />
+    <Compile Include="Controls\EGV Controls\Filter.vb" />
+    <Compile Include="Controls\EGV Controls\GridView.vb" />
+    <Compile Include="Controls\Form Controls\Hyperlink.vb" />
+    <Compile Include="Controls\EGV Controls\ImageCrop.vb" />
+    <Compile Include="Controls\Form Controls\ImageSelectorTextBox.vb" />
+    <Compile Include="Controls\Layout Controls\InputForm.vb" />
+    <Compile Include="Controls\Form Controls\LinkButton.vb" />
+    <Compile Include="Controls\EGV Controls\Notifier.vb" />
+    <Compile Include="Controls\EGV Controls\Pager.vb" />
+    <Compile Include="Controls\Validation Controls\RegularExpressionValidator.vb" />
+    <Compile Include="Controls\Validation Controls\RequiredFieldValidator.vb" />
+    <Compile Include="Controls\Form Controls\SaveCancel.vb" />
+    <Compile Include="Controls\Layout Controls\Tabs.vb" />
+    <Compile Include="Controls\Form Controls\TextBox.vb" />
+    <Compile Include="Controls\Layout Controls\Toolbar.vb" />
+    <Compile Include="Core\CustomQuery.vb" />
+    <Compile Include="Core\DataAccess.vb" />
+    <Compile Include="Core\Enums.vb" />
+    <Compile Include="Core\Structures.vb" />
+    <Compile Include="Emails\UserEmails.vb" />
+    <Compile Include="Interface\INotifier.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="services\App\Seasons.vb" />
+    <Compile Include="services\CMS\AssetsManager.vb" />
+    <Compile Include="services\CMS\CMSAutoComplete.vb" />
+    <Compile Include="services\App\Membership.vb" />
+    <Compile Include="services\CMS\Mailbox.vb" />
+    <Compile Include="services\CMS\QuickAdd.vb" />
+    <Compile Include="Utils\AjaxHandler.vb" />
+    <Compile Include="Utils\Exceptions.vb" />
+    <Compile Include="Utils\Helper.vb" />
+    <Compile Include="Utils\Localization.vb" />
+    <Compile Include="Utils\Mailer.vb" />
+    <Compile Include="Utils\OleDBDataAccess.vb" />
+    <Compile Include="Utils\Path.vb" />
+    <Compile Include="Utils\ScriptManager.vb" />
+    <Compile Include="Utils\Security.vb" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{94E38DFF-614B-4CBD-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>9</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
