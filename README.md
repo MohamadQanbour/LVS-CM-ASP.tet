@@ -1,2 +1,2 @@
-# LVS-CM-ASP.net
-Little Village School Control Mangment (Backend Project)
+# LVS-CMS-ASP.net
+Little Village School Content Management System (Backend Project)
