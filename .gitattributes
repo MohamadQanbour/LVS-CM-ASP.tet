@@ -1,2 +1,4 @@
+*.vbnet linguist-detectable=true
 *.Csharp linguist-detectable=false
 *.html linguist-detectable=false
+*.js linguist-detectable=false
