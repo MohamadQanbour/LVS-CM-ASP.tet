@@ -1,3 +1,4 @@
+*.Visual Basic .NET linguist-detectable=true 
 *.asp.net linguist-detectable=true 
 *.Csharp linguist-detectable=false
 *.html linguist-detectable=false
