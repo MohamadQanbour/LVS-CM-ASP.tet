@@ -1,2 +1,3 @@
-*Csharp linguist-detectable=false
+
+*.Csharp linguist-detectable=false
 *.html linguist-detectable=false
